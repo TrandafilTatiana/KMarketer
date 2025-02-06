@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KMarketer</title>
     <link rel="stylesheet" href="./assets/styles/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -10,7 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+VIC+Guides&family=Playwrite+IE+Guides&family=Rubik+Vinyl&display=swap"
       rel="stylesheet"
     />
-    <title>Document</title>
   </head>
   <body>
     <header class="header">
@@ -58,17 +58,17 @@
     <main class="main">
       <section class="hero">
         <div class="container">
-          <img class="hero-image" src="./assets/images/header-1.png" alt="hero background">
+          <img class="hero__image" src="./assets/images/header_1.png" alt="hero background">
         </img>
-          <div class="container1">
-            <h1 class="container1__h1">We Take Care of the Future</h1>
-            <h4 class="container1__h4">
+          <div class="hero__container">
+            <h1 class="hero__heading">We Take Care of the Future</h1>
+            <h4 class="hero__subheading">
               We know how large objects will act, but things on a small scale
               just do not act that way.
             </h4>
             <div class="hero__actions">
-              <button class="hero__btn1">Get Quote Now</button>
-              <button class="hero__btn2">Learn more</button>
+              <button class="hero__btn btn--primary">Get Quote Now</button>
+              <button class="hero__btn">Learn more</button>
             </div>
           </div>
         </div>
@@ -95,7 +95,7 @@
       <div class="container">
         <div class="footer__top">
           <a href="#" class="footer__logo">
-            <span class="logo">KMarketer</span>
+            <span>KMarketer</span>
           </a>
 
           <ul class="footer__socials">
@@ -132,7 +132,7 @@
               <li class="list__link"><a href="#">SEO</a></li>
             </ul>
           </div>
-          <div class="main__item item1">
+          <div class="main__item">
             <h3 class="item__title">Legal</h3>
             <ul class="item__list">
               <li class="list__link"><a href="#">About Us</a></li>
@@ -150,7 +150,7 @@
               <li class="list__link"><a href="#">Unlimited Support</a></li>
             </ul>
           </div>
-          <div class="main__item item1">
+          <div class="main__item">
             <h3 class="item__title">Resources</h3>
             <ul class="item__list">
               <li class="list__link"><a href="#">IOS & Android</a></li>
@@ -159,18 +159,18 @@
               <li class="list__link"><a href="#">API</a></li>
             </ul>
           </div>
-          <div class="main__item">
-            <h3 class="item__title">Get In Touch</h3>
+          <div class="main__item item--container">
+            <h3 class="item__title title--btn">Get In Touch</h3>
             <form class="item__form" action="">
-              <input class="form__input"  type="text" placeholder="Your Email" />
-              <button class="form__button">Subscribe</button>
+              <input class="form__footer"  type="text" placeholder="Your Email" />
+              <button class="form__footer footer--buton">Subscribe</button>
             </form>
             <p class="item__text">Lorem impsum dolor amit</p>
           </div>
         </div>
 
         <div class="footer__bottom">
-          <p class="bottom__text">&copy; 2020 Company. All rights reserved.</p>
+          <p class="bottom__text">Made With Love By Figmaland All Right Reserved</p>
         </div>
       </div>
     </footer>
