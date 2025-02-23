@@ -132,6 +132,108 @@ body {
       }
     }
   }
+  .feature {
+    .container {
+      padding: 16rem 0 10rem;
+
+      .feature__heading {
+        font-size: 4rem;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .feature__subheading {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin: 0;
+        padding: 10px 0 45px;
+      }
+      .feature__flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 3rem;
+
+        .flex__item {
+          max-width: 32.8rem;
+          background-color: #ffffff;
+          padding: 35px 40px;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+          align-items: center;
+          gap: 1.5rem;
+          text-align: left;
+          box-sizing: border-box;
+
+          .feature__icn {
+            width: 4.8rem;
+            height: 4.8rem;
+          }
+
+          .item__heading {
+            color: #252b42;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0;
+          }
+          .item__subheading {
+            color: #737373;
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 4.5px;
+          }
+        }
+      }
+    }
+  }
+  .service {
+    .container {
+      padding: 87px 0;
+
+      .service__heading {
+        font-size: 4rem;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .service__subheading {
+        font-size: 1.4rem;
+        font-weight: 500;
+        margin: 0;
+        padding: 16px 0 50px;
+      }
+      .service__video {
+        position: relative;
+        width: 100%;
+
+        .video__button {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 9.8rem;
+          height: 9.8rem;
+          background-color: #00a0c1;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          .button__triangle {
+            width: 0;
+            height: 0;
+            border: 14.4px solid transparent;
+            border-left: 25px solid white;
+            margin-left: 2rem;
+          }
+        }
+        .service__img {
+        }
+      }
+    }
+  }
 }
 
 .footer {
