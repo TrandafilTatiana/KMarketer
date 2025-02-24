@@ -316,7 +316,7 @@ body {
     }
   }
 
- .team {
+  .team {
     .team__heading {
       font-size: 4rem;
       font-weight: 700;
@@ -373,6 +373,131 @@ body {
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  .contact {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .container {
+      text-align: left;
+
+      .contact__image {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        z-index: -1;
+        /*width: 100%;*/
+        max-width: 144rem;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .contact__main {
+        max-width: 60.2rem;
+        .contact__heading {
+          font-size: 1.6rem;
+          font-weight: 700;
+          margin: 0;
+          padding: 90px 0 7px;
+        }
+
+        .contact__subheading {
+          font-size: 4rem;
+          font-weight: 700;
+          margin: 0;
+          padding-bottom: 46px;
+        }
+
+        .contact__form {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 20px;
+
+          .form__appointment {
+            color: #bdbdbd;
+            font-size: 1.4rem;
+            font-weight: 600;
+            border: 1px solid #f9f9f9;
+            border-radius: 5px;
+            padding: 16px 20px;
+          }
+          
+          .appointment--select {
+            cursor: pointer;
+          }
+
+          .appointment--message {
+            grid-column: span 2;
+            color: #bdbdbd;
+          }
+        }
+
+        .contact__button {
+          margin: 45.5px 0 90px;
+          padding: 20px 46px;
+          background-color: #ffa62b;
+          color: #ffffff;
+          font-size: 1.4rem;
+          font-weight: 600;
+          border-radius: 5px;
+          border: 1px solid #ffa62b;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .contact__bottom {
+      max-width: 144rem;
+      width: 100%;
+      background-color: #fafafa;
+      display: flex;
+      justify-content: center;
+
+      .bottom__container {
+        max-width: 105rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 42px 0;
+
+        .bottom__left {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+         
+          .bottom__heading {
+            color: #252b42;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin: 0;
+            padding-bottom: 12px;
+          }
+
+          .bottom__text {
+            color: #737373;
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 0;
+          }
+        }
+
+        .bottom__button {
+          color: #FFFFFF;
+          font-size: 1.4rem;
+          font-weight: 700;
+          margin: 0 38px;
+          padding: 15px 42px;
+          background-color: #ffa62b;
+          border-radius: 5px;
+          border: 1px solid #ffa62b;
+          cursor: pointer;
         }
       }
     }
