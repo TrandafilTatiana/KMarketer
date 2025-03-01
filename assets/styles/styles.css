@@ -206,8 +206,7 @@ body {
           box-sizing: border-box;
 
           .feature__icn {
-            width: 4.8rem;
-            height: 4.8rem;
+            width: 100%;
           }
 
           .item__heading {
@@ -227,7 +226,7 @@ body {
     padding: 87px 0;
     .container {
       .subheading {
-        padding: 16px 0 50px;
+        margin: 16px 0 50px;
       }
 
       .service__video {
@@ -261,12 +260,14 @@ body {
   }
 
   .feedback {
-    .heading {
-      margin: 85px 0 17px;
+    padding: 85px 0;
+
+    .subheading {
+      margin: 17px 0 75px;
     }
 
     .feedbacks {
-      margin: 80px 0;
+      margin: 0;
       display: flex;
       gap: 3rem;
 
@@ -322,14 +323,16 @@ body {
   }
 
   .team {
-    .heading {
-      margin: 85px 0 17.5px;
+    padding: 80px 0;
+
+    .subheading {
+      margin: 24.5px 0 80px;
     }
 
     .team__members {
       display: flex;
       gap: 3.3rem;
-      margin: 81px 0;
+      margin: 0;
 
       .members__item {
         display: flex;
@@ -423,18 +426,15 @@ body {
     }
 
     .contact__bottom {
-      width: 100%;
+      width: 100vw;
       background-color: #fafafa;
       display: flex;
       justify-content: center;
       padding: 40px 0;
 
-      .bottom__container {
-        max-width: 105rem;
-        width: 100%;
+      .container {
         display: flex;
         justify-content: space-between;
-        
 
         .bottom__left {
           display: flex;
@@ -578,12 +578,15 @@ body {
   }
 
   .footer__bottom {
-    width: 144rem;
+    width: 100vw;
     background-color: #16697a;
-    padding: 1.45rem 0;
+    padding: 28.5px 0;
+    display: flex;
+    justify-content: center;
 
-    .bottom__text {
-      padding-left: 19.5rem;
+    .bottom__content {
+      max-width: 105rem;
+      width: 100%;
     }
   }
 }
