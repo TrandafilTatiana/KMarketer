@@ -24,7 +24,8 @@ body {
 .item__list,
 .bottom__text,
 .client__heading,
-.client__info {
+.client__info,
+.members__position  {
   font-size: 1.4rem;
   font-weight: 600;
   margin: 0;
@@ -36,7 +37,8 @@ body {
 }
 
 .item__heading,
-.item__title {
+.item__title,
+.members__name {
   font-size: 1.6rem;
   font-weight: 700;
   margin: 0;
@@ -307,53 +309,38 @@ body {
   }
 
  .team {
-    .team__heading {
-      font-size: 4rem;
-      font-weight: 700;
-      margin: 0;
-      padding: 85px 0 17px;
+    .heading {
+      margin: 85px 0 17.5px;
     }
 
-    .team__subheading {
-      font-size: 1.4rem;
-      font-weight: 500;
-      margin: 0;
-    }
-
-    .team__flex {
+    .team__members {
       display: flex;
       gap: 3.3rem;
-      padding: 81.5px 0;
+      margin: 81px 0;
 
-      .flex__item {
+      .members__item {
         display: flex;
         flex-direction: column;
 
-        .team__info {
+        .members__info {
           background-color: #ffffff;
+          padding: 30px 0;
 
-          .team__name {
+          .members__name {
             color: #252b42;
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin: 0;
-            padding: 30px 0 5px;
           }
 
-          .team__position {
+          .members__position {
             color: #737373;
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin: 0;
-            padding: 5px 0 9px;
+            margin: 9.5px 0;
           }
 
-          .team__socials {
+          .members__socials {
             list-style: none;
             display: flex;
             gap: 1.5rem;
+            padding: 0;
             margin: 0;
-            padding: 0 0 30px;
             justify-content: center;
 
             .socials__link {
@@ -457,7 +444,7 @@ body {
           border: 1px;
         }
 
-        .footer--buton {
+        .footer--button {
           border-radius: 0 5px 5px 0;
           background-color: #ffa62b;
           cursor: pointer;
