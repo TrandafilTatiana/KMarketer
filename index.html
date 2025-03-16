@@ -11,6 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playwrite+AU+VIC+Guides&family=Playwrite+IE+Guides&family=Rubik+Vinyl&display=swap"
       rel="stylesheet"
     />
+    <script src="./assets/scripts/index.js"></script>
   </head>
   <body>
     <header class="header">
@@ -478,25 +479,34 @@
               <input
                 class="form__element"
                 type="email"
+                id="email"
                 placeholder="example@gmail.com"
                 required
               />
-              <select class="form__element element--select">
+              <p class="form__result" id="name_result"></p>
+              <p class="form__result" id="email_result"></p>
+              <select class="form__element element--select" id="date" name="date">
                 <option value="" disabled selected>Please Select</option>
                 <option value="option1">option1</option>
                 <option value="option2">option2</option>
               </select>
-              <select class="form__element element--select">
+              <select class="form__element element--select"
+              id="time" name="time">
                 <option value="" disabled selected>4:00 Available</option>
                 <option value="option1">option1</option>
                 <option value="option2">option2</option>
               </select>
+              <p class="form__result" id="date_result"></p>
+              <p class="form__result" id="time_result"></p>
               <textarea
                 class="form__element element--message"
+                id="message" 
+                name="message"
                 placeholder="Message"
                 rows="6"
                 cols="50"
               ></textarea>
+              <p class="form__result" id="message_result"></p>
             </form>
             <button class="contact__button" type="button">
               Book Appointment
