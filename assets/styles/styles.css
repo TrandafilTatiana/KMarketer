@@ -411,6 +411,11 @@ body {
             grid-column: span 2;
             color: #bdbdbd;
           }
+
+          .form__result {
+            margin: 0;
+            font-size: 18px;
+          }
         }
 
         .contact__button {
