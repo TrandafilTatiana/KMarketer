@@ -25,31 +25,37 @@ body {
 .bottom__text,
 .client__heading,
 .client__info,
-.members__position  {
+.members__position,
+.form__element,
+.contact__button {
   font-size: 1.4rem;
   font-weight: 600;
   margin: 0;
 }
 
-.hero__btn {
+.hero__btn,
+.bottom__button {
   font-size: 1.4rem;
   font-weight: 700;
 }
 
 .item__heading,
 .item__title,
-.members__name {
+.members__name,
+.contact__heading {
   font-size: 1.6rem;
   font-weight: 700;
   margin: 0;
 }
 
-.logo {
+.logo,
+.bottom__heading {
   font-size: 2.4rem;
   font-weight: 700;
 }
 
-.heading {
+.heading,
+.contact__subheading {
   font-size: 4rem;
   font-weight: 700;
   margin: 0;
@@ -109,60 +115,67 @@ body {
   align-items: center;
   text-align: center;
 
-  .container {
-    .hero__image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      left: 50%;
-      transform: translate(-50%, 0%);
-      z-index: -1;
-      max-width: 144rem;
-      width: 100%;
-      max-height: 68rem;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(50%);
-    }
+  .hero {
+    position: relative;
+    background-image: url("../images/header_1.png");
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-top: -10.4rem;
+    z-index: -1;
 
-    .hero__container {
-      max-width: 57.3rem;
-      width: 100%;
-      padding: 129px 0;
+    .container {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4rem;
+      justify-content: center;
 
-      .hero__heading {
-        font-size: 5.8rem;
-        font-weight: 800;
-        margin: 0;
+      .hero__overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
       }
 
-      .hero__subheading {
-        font-size: 2rem;
-        font-weight: 500;
-        margin: 0;
-      }
-
-      .hero__actions {
+      .hero__container {
+        z-index: 2;
+        max-width: 57.3rem;
+        padding: 215px 0 135px;
         display: flex;
-        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 4.6rem;
 
-        .hero__btn {
-          padding: 1.5rem 3.8rem;
-          border-radius: 3.7rem;
-          border: 1px solid;
-          background: transparent;
-          color: #ffffff;
-          cursor: pointer;
+        .hero__heading {
+          font-size: 5.8rem;
+          font-weight: 800;
+          margin: 0;
         }
 
-        .btn--primary {
-          background-color: #ffa62b;
-          border: 0;
-          padding: 1.5rem 4.2rem;
+        .hero__subheading {
+          font-size: 2rem;
+          font-weight: 500;
+          margin: 0;
+        }
+
+        .hero__actions {
+          display: flex;
+          gap: 1rem;
+
+          .hero__btn {
+            padding: 1.5rem 3.8rem;
+            border-radius: 3.7rem;
+            border: 1px solid;
+            background: transparent;
+            color: #ffffff;
+            cursor: pointer;
+          }
+
+          .btn--primary {
+            background-color: #ffa62b;
+            border: 0;
+            padding: 1.5rem 4.2rem;
+          }
         }
       }
     }
@@ -193,8 +206,7 @@ body {
           box-sizing: border-box;
 
           .feature__icn {
-            width: 4.8rem;
-            height: 4.8rem;
+            width: 100%;
           }
 
           .item__heading {
@@ -214,7 +226,7 @@ body {
     padding: 87px 0;
     .container {
       .subheading {
-        padding: 16px 0 50px;
+        margin: 16px 0 50px;
       }
 
       .service__video {
@@ -248,12 +260,14 @@ body {
   }
 
   .feedback {
-    .heading {
-      margin: 85px 0 17px;
+    padding: 85px 0;
+
+    .subheading {
+      margin: 17px 0 75px;
     }
 
     .feedbacks {
-      margin: 80px 0;
+      margin: 0;
       display: flex;
       gap: 3rem;
 
@@ -301,22 +315,24 @@ body {
 
           .client__position {
             color: #252b42;
-            margin: 0; 
+            margin: 0;
           }
         }
       }
     }
   }
 
- .team {
-    .heading {
-      margin: 85px 0 17.5px;
+  .team {
+    padding: 80px 0;
+
+    .subheading {
+      margin: 24.5px 0 80px;
     }
 
     .team__members {
       display: flex;
       gap: 3.3rem;
-      margin: 81px 0;
+      margin: 0;
 
       .members__item {
         display: flex;
@@ -350,6 +366,99 @@ body {
               }
             }
           }
+        }
+      }
+    }
+  }
+
+  .contact {
+    background-image: url("../images/Contact.png");
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .container {
+      text-align: left;
+
+      .contact__main {
+        max-width: 60.2rem;
+        padding: 90px 0;
+
+        .contact__subheading {
+          margin: 7px 0 46px;
+        }
+
+        .contact__form {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-gap: 20px;
+
+          .form__element {
+            color: #bdbdbd;
+            border: 1px solid #f9f9f9;
+            border-radius: 5px;
+            padding: 16px 20px;
+          }
+
+          .element--select {
+            cursor: pointer;
+          }
+
+          .element--message {
+            grid-column: span 2;
+            color: #bdbdbd;
+          }
+        }
+
+        .contact__button {
+          margin-top: 45.5px;
+          padding: 20px 46px;
+          background-color: #ffa62b;
+          color: #ffffff;
+          border-radius: 5px;
+          border: 1px solid #ffa62b;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .contact__bottom {
+      width: 100vw;
+      background-color: #fafafa;
+      display: flex;
+      justify-content: center;
+      padding: 40px 0;
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+
+        .bottom__left {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .bottom__heading {
+            color: #252b42;
+            margin: 0 0 16px;
+          }
+
+          .bottom__text {
+            color: #737373;
+          }
+        }
+
+        .bottom__button {
+          color: #ffffff;
+          margin: 0 38px;
+          padding: 15px 42px;
+          background-color: #ffa62b;
+          border-radius: 5px;
+          border: 1px solid #ffa62b;
+          cursor: pointer;
         }
       }
     }
@@ -469,12 +578,15 @@ body {
   }
 
   .footer__bottom {
-    width: 144rem;
+    width: 100vw;
     background-color: #16697a;
-    padding: 1.45rem 0;
+    padding: 28.5px 0;
+    display: flex;
+    justify-content: center;
 
-    .bottom__text {
-      padding-left: 19.5rem;
+    .bottom__content {
+      max-width: 105rem;
+      width: 100%;
     }
   }
 }
