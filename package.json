@@ -1,0 +1,24 @@
+{
+  "name": "kmarketer",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrandafilTatiana/KMarketer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TrandafilTatiana/KMarketer/issues"
+  },
+  "homepage": "https://github.com/TrandafilTatiana/KMarketer#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "svgo": "^3.3.2"
+  }
+}
