@@ -1,0 +1,15 @@
+@mixin btn-style {
+  padding: 1.5rem 3.8rem;
+  border-radius: 3.7rem;
+  border: 1px solid;
+  background-color: $background-color;
+  color: $color-base;
+  cursor: pointer;
+}
+
+@mixin container-flex($align-items, $justify-content, $gap) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  gap: $gap;
+}
