@@ -1,6 +1,5 @@
-@import 'variables';
-@import 'button'; 
-
+@import "variables";
+@import "button";
 
 html {
   font-size: $font-size-base;
@@ -262,13 +261,46 @@ body {
       margin: 17px 0 75px;
     }
 
+    .feedbacks-container {
+      position: relative;
+      overflow: hidden;
+
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 1rem 1.5rem;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 1;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+    }
+
     .feedbacks {
-      margin: 0;
       display: flex;
-      gap: 3rem;
+      gap: 30px;
 
       &__item {
-        max-width: 33rem;
+        flex: 0 0 calc(34.5% - 3.3rem); 
         background-color: $color-base;
         padding: 30px 35px;
         display: grid;
@@ -278,6 +310,7 @@ body {
         box-sizing: border-box;
         border-radius: 5px;
         border: 1px solid #dedede;
+        box-sizing: border-box;
 
         .feedback__stars {
           grid-column: span 2;
@@ -326,43 +359,53 @@ body {
     }
 
     .team__members {
-      display: flex;
-      gap: 3.3rem;
-      margin: 0;
+      overflow: hidden;
+      position: relative;
 
-      .members__item {
-        display: flex;
-        flex-direction: column;
+      .swiper-wrapper {
+        gap: 3.3rem;
 
-        .members__info {
-          background-color: $color-base;
-          padding: 30px 0;
+        .members__item {
+          display: flex;
+          flex: 0 0 calc(33% - 3.3rem);
+          flex-direction: column;
 
-          .members__name {
-            color: $background-color;
-          }
+          .members__info {
+            background-color: $color-base;
+            padding: 30px 0;
 
-          .members__position {
-            color: $gray-color;
-            margin: 9.5px 0;
-          }
+            .members__name {
+              color: $background-color;
+            }
 
-          .members__socials {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            padding: 0;
-            margin: 0;
-            justify-content: center;
+            .members__position {
+              color: $gray-color;
+              margin: 9.5px 0;
+            }
 
-            .socials__link {
-              .link__img {
-                width: 2.4rem;
-                height: 2.4rem;
+            .members__socials {
+              list-style: none;
+              display: flex;
+              gap: 1.5rem;
+              padding: 0;
+              margin: 0;
+              justify-content: center;
+
+              .socials__link {
+                .link__img {
+                  width: 2.4rem;
+                  height: 2.4rem;
+                }
               }
             }
           }
         }
+      }
+      .swiper-button-next {
+        right: 10px;
+      }
+      .swiper-button-prev {
+        left: 10px;
       }
     }
   }
