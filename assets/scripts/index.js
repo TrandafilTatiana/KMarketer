@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementsByClassName("contact__form");
+  const form = document.getElementsByClassName("contact__form")[0];
   const nameInput = document.getElementById("fullname");
   const resultName = document.getElementById("name_result");
   const emailInput = document.getElementById("email");
@@ -63,6 +63,26 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       resultMessage.textContent = `${message} message added`;
       resultMessage.style.color = "darkgreen";
+    }
+  }
+
+  //click hamburger on mobile
+  const hamburgerBtn = document.getElementById("hamburger");
+  hamburgerBtn.addEventListener("click", handleHamburgerClick);
+
+  function handleHamburgerClick() {
+    const nav = document.getElementById("nav");
+    const menuIcon = document.querySelector(".btn--menu");
+    const closeIcon = document.querySelector(".btn--close");
+    //nav.style.display = "block";
+    nav.classList.toggle("header__nav--open");
+
+    if (menuIcon.style.display === "none") {
+      menuIcon.style.display = "block";
+      closeIcon.style.display = "none";
+    } else {
+      menuIcon.style.display = "none";
+      closeIcon.style.display = "block";
     }
   }
 });
