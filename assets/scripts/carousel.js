@@ -1,45 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
-  
   //carousel
+
   let currentIndex = 0;
   const slides = document.querySelectorAll(".feedbacks__item");
-  const totalSlides = slides.length;
-  const slidesToMove = 3; 
-  const slideWidth = slides[0].offsetWidth + 30; 
+  const slideWidth = slides[0].offsetWidth + 30;
   const feedbacksContainer = document.querySelector(".feedbacks");
+  let slidesToMove = window.innerWidth <= 768 ? 1 : 3;
+
+  window.addEventListener("resize", () => {
+    slidesToMove = window.innerWidth <= 768 ? 1 : 3;
+  });
 
   function moveSlide(direction) {
-    currentIndex += direction * slidesToMove;
-
-    if (currentIndex >= totalSlides - slidesToMove) {
-      currentIndex = totalSlides - slidesToMove;
-    } else if (currentIndex < 0) {
-      currentIndex = 0; 
-    }
-
+    currentIndex = Math.min(
+      Math.max(currentIndex + direction * slidesToMove, 0),
+      slides.length - slidesToMove
+    );
     feedbacksContainer.style.transition = "transform 0.5s ease";
-
     feedbacksContainer.style.transform = `translateX(-${
       currentIndex * slideWidth
-    }px)`; 
+    }px)`;
   }
 
-  const prevButton = document.querySelector(".prev");
-  const nextButton = document.querySelector(".next");
-
-  prevButton.addEventListener("click", function () {
-    moveSlide(-1); 
-  });
-
-  nextButton.addEventListener("click", function () {
-    moveSlide(1); 
-  });
+  document
+    .querySelector(".prev")
+    .addEventListener("click", () => moveSlide(-1));
+  document.querySelector(".next").addEventListener("click", () => moveSlide(1));
 
   //swiper
 
   var swiper = new Swiper(".swiper-container", {
-    slidesPerView: 3,
-    slidesPerGroup: 3,
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 30,
+    breakpoints: {
+      769: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 30,
+      },
+    },
+
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -48,10 +49,10 @@ document.addEventListener("DOMContentLoaded", function () {
       el: ".swiper-pagination",
       clickable: true,
     },
-    mousewhell: true,
+    mousewheel: true,
     keyboard: true,
   });
 
+  var swiperWrapper = document.querySelector(".swiper-wrapper");
+  swiperWrapper.style.gap = "0";
 });
-
-

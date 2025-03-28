@@ -65,4 +65,24 @@ document.addEventListener("DOMContentLoaded", function () {
       resultMessage.style.color = "darkgreen";
     }
   }
+
+  //click hamburger on mobile
+  const hamburgerBtn = document.getElementById("hamburger");
+  hamburgerBtn.addEventListener("click", handleHamburgerClick);
+
+  function handleHamburgerClick() {
+    const nav = document.getElementById("nav");
+    const menuIcon = document.querySelector(".btn--menu");
+    const closeIcon = document.querySelector(".btn--close");
+    //nav.style.display = "block";
+    nav.classList.toggle("header__nav--open");
+
+    if (menuIcon.style.display === "none") {
+      menuIcon.style.display = "block";
+      closeIcon.style.display = "none";
+    } else {
+      menuIcon.style.display = "none";
+      closeIcon.style.display = "block";
+    }
+  }
 });
