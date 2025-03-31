@@ -1,3 +1,6 @@
+import Swiper from "swiper";
+import "swiper/swiper-bundle.css";
+
 document.addEventListener("DOMContentLoaded", function () {
   //carousel
 
@@ -29,14 +32,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //swiper
 
+  console.log("Swiper initialization started.");
+
   var swiper = new Swiper(".swiper-container", {
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 30,
     breakpoints: {
-      769: {
+      768: {
         slidesPerView: 3,
         slidesPerGroup: 3,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
         spaceBetween: 30,
       },
     },
@@ -53,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     keyboard: true,
   });
 
+  console.log("Swiper initialized.");
   var swiperWrapper = document.querySelector(".swiper-wrapper");
   swiperWrapper.style.gap = "0";
 });

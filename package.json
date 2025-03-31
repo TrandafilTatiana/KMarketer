@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/TrandafilTatiana/KMarketer#readme",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.13.3",
     "parcel": "^2.13.3",
     "svgo": "^3.3.2"
+  },
+  "dependencies": {
+    "swiper": "^11.2.6"
   }
 }

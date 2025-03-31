@@ -21,6 +21,11 @@ body {
     padding-right: 1rem;
     max-width: 33.4rem;
   }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 72rem;
+  }
 }
 
 .subheading {
@@ -278,6 +283,12 @@ body {
           flex-direction: column;
         }
 
+        @media (min-width: 769px) and (max-width: 1024px) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+
         &__item {
           max-width: 32.8rem;
           background-color: $color-base;
@@ -341,11 +352,9 @@ body {
         }
 
         .service__img {
-          @media (max-width: 768px) {
-            width: 100%;
-            height: 44rem;
-            object-fit: cover;
-          }
+          width: 100%;
+          height: 44rem;
+          object-fit: cover;
         }
       }
     }
@@ -353,37 +362,46 @@ body {
 
   .feedback {
     padding: 85px 0;
+    position: relative;
 
     .subheading {
       margin: 17px 0 75px;
     }
 
     .feedbacks-container {
-      position: relative;
       overflow: hidden;
+      max-width: 900px;
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        max-width: 620px;
+      }
 
       .prev,
       .next {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
         border: none;
-        padding: 1rem 1.5rem;
-        font-size: 2rem;
+        transform: translateY(400%);
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
         cursor: pointer;
         z-index: 1;
         border-radius: 5px;
         transition: background-color 0.3s ease;
+
+        @media (max-width: 768px) {
+          transform: translateY(550%);
+        }
       }
 
       .prev {
-        left: 10px;
+        left: -35px;
       }
 
       .next {
-        right: 10px;
+        right: -35px;
       }
 
       .prev:hover,
@@ -411,6 +429,10 @@ body {
 
         @media (max-width: 768px) {
           flex: 0 0 100%;
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+          flex: 0 0 50%;
         }
 
         .feedback__stars {
@@ -453,7 +475,8 @@ body {
   }
 
   .team {
-    padding: 80px 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
 
     .subheading {
       margin: 24.5px 0 80px;
@@ -473,6 +496,10 @@ body {
 
           @media (max-width: 768px) {
             flex: 0 0 100%;
+          }
+
+          @media (min-width: 769px) and (max-width: 1024) {
+            flex: 0 0 48%;
           }
 
           .members__info {
@@ -688,6 +715,12 @@ body {
       flex-direction: column;
     }
 
+    @media (min-width: 769px) and (max-width: 1024) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+    }
+
     .main__item {
       @extend .container;
       align-items: flex-start;
@@ -742,6 +775,12 @@ body {
 
     .item--container {
       gap: 0;
+
+      @media (min-width: 769px) and (max-width: 1024) {
+        dgrid-column: span 2;
+      }
+
+      grid-column: span 2;
 
       .title--btn {
         padding-bottom: 2rem;
