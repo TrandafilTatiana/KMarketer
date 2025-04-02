@@ -12,51 +12,59 @@
       rel="stylesheet"
     />
     <script src="./assets/scripts/index.js"></script>
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" />
   </head>
   <body>
     <header class="header">
       <div class="container">
-        <a href="#" class="logo">
-          <span>KMarketer</span>
-        </a>
+        <div class="header-content">
+          <a href="#" class="logo">
+            <span>KMarketer</span>
+          </a>
 
-        <nav class="header__nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#" class="nav__link">Home</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Product</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Pricing</a>
-            </li>
-            <li class="nav__item">
-              <a href="#" class="nav__link">Contact</a>
-            </li>
-          </ul>
-        </nav>
+          <nav class="header__nav" id="nav">
+            <ul class="nav__list">
+              <li class="nav__item">
+                <a href="#" class="nav__link">Home</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Product</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Pricing</a>
+              </li>
+              <li class="nav__item">
+                <a href="#" class="nav__link">Contact</a>
+              </li>
+            </ul>
+          </nav>
 
-        <div class="header__actions">
-          <button class="action__btn">
-            <img
-              class="btn__img"
-              src="./assets/images/icons/icn-search.svg"
-              alt="search icon"
-            />
-          </button>
-          <button class="action__btn">
-            <img
-              class="btn__img"
-              src="./assets/images/icons/icn-cart.svg"
-              alt="cart icon"
-            />
-          </button>
-          <button class="action__btn ">
+          <div class="header__actions">
+            <button class="action__btn">
+              <img
+                class="btn__img"
+                src="./assets/images/icons/icn-search.svg"
+                alt="search icon"
+              />
+            </button>
+            <button class="action__btn">
+              <img
+                class="btn__img"
+                src="./assets/images/icons/icn-cart.svg"
+                alt="cart icon"
+              />
+            </button>
+          </div>
+          <button class="header__hamburger" id="hamburger">
             <img
               class="btn__img btn--menu"
               src="./assets/images/icons/icn-menu.png"
               alt="menu icon"
+            />
+            <img
+              class="btn__img btn--close"
+              src="./assets/images/icons/icn-hamburger-close.png"
+              alt="menu close icon"
             />
           </button>
         </div>
@@ -65,8 +73,11 @@
 
     <main class="main">
       <section class="hero">
-        <div class="container">
+        <div class="hero__background">
+          <div class="hero__image"></div>
           <div class="hero__overlay"></div>
+        </div>
+        <div class="container">
           <div class="hero__container">
             <h1 class="hero__heading">We Take Care of the Future</h1>
             <h4 class="hero__subheading">
@@ -196,139 +207,279 @@
             the two major realms of Classical physics: Newtonian mechanics
           </p>
 
-          <div class="feedbacks">
-            <div class="feedbacks__item">
-              <div class="feedback__stars">
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/star.png"
-                  alt="star"
-                />
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/star.png"
-                  alt="star"
-                />
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/star.png"
-                  alt="star"
-                />
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/star.png"
-                  alt="star"
-                />
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/empty-star.png"
-                  alt="empty star"
-                />
-              </div>
-              <h6 class="client__heading">
-                Slate helps you see how many more days you need to work to reach
-                your financial goal.
-              </h6>
-              <img
-                class="client__icn"
-                src="./assets/images/feedback_1.png"
-                alt="photo Regina"
-              />
-              <div class="client__info">
-                <a class="client__link" href="#" target="_blank"
-                  >Regina Miles</a
-                >
-                <p class="client__position">Designer</p>
-              </div>
-            </div>
+          <div class="feedbacks-container">
+            <button class="prev">Prev</button>
+            <button class="next">Next</button>
 
-            <div class="feedbacks__item">
-              <div class="feedback__stars">
+            <div class="feedbacks">
+              <div class="feedbacks__item">
+                <div class="feedback__stars">
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/empty-star.png"
+                    alt="empty star"
+                  />
+                </div>
+                <h6 class="client__heading">
+                  Slate helps you see how many more days you need to work to
+                  reach your financial goal.
+                </h6>
                 <img
-                  class="feedback__star"
-                  src="./assets/images/icons/star.png"
-                  alt="star"
+                  class="client__icn"
+                  src="./assets/images/feedback_1.png"
+                  alt="photo Regina"
                 />
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/star.png"
-                  alt="star"
-                />
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/star.png"
-                  alt="star"
-                />
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/star.png"
-                  alt="star"
-                />
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/empty-star.png"
-                  alt="empty star"
-                />
+                <div class="client__info">
+                  <a class="client__link" href="#" target="_blank"
+                    >Regina Miles</a
+                  >
+                  <p class="client__position">Designer</p>
+                </div>
               </div>
-              <h6 class="client__heading">
-                Slate helps you see how many more days you need to work to reach
-                your financial goal.
-              </h6>
-              <img
-                class="client__icn"
-                src="./assets/images/feedback_2.png"
-                alt="photo Regina"
-              />
-              <div class="client__info">
-                <a class="client__link" href="#" target="_blank"
-                  >Regina Miles</a
-                >
-                <p class="client__position">Designer</p>
-              </div>
-            </div>
 
-            <div class="feedbacks__item">
-              <div class="feedback__stars">
+              <div class="feedbacks__item">
+                <div class="feedback__stars">
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/empty-star.png"
+                    alt="empty star"
+                  />
+                </div>
+                <h6 class="client__heading">
+                  Slate helps you see how many more days you need to work to
+                  reach your financial goal.
+                </h6>
                 <img
-                  class="feedback__star"
-                  src="./assets/images/icons/star.png"
-                  alt="star"
+                  class="client__icn"
+                  src="./assets/images/feedback_2.png"
+                  alt="photo Regina"
                 />
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/star.png"
-                  alt="star"
-                />
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/star.png"
-                  alt="star"
-                />
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/star.png"
-                  alt="star"
-                />
-                <img
-                  class="feedback__star"
-                  src="./assets/images/icons/empty-star.png"
-                  alt="empty star"
-                />
+                <div class="client__info">
+                  <a class="client__link" href="#" target="_blank"
+                    >Regina Miles</a
+                  >
+                  <p class="client__position">Designer</p>
+                </div>
               </div>
-              <h6 class="client__heading">
-                Slate helps you see how many more days you need to work to reach
-                your financial goal.
-              </h6>
-              <img
-                class="client__icn"
-                src="./assets/images/feedback_3.png"
-                alt="photo Regina"
-              />
-              <div class="client__info">
-                <a class="client__link" href="#" target="_blank"
-                  >Regina Miles</a
-                >
-                <p class="client__position">Designer</p>
+
+              <div class="feedbacks__item">
+                <div class="feedback__stars">
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/empty-star.png"
+                    alt="empty star"
+                  />
+                </div>
+                <h6 class="client__heading">
+                  Slate helps you see how many more days you need to work to
+                  reach your financial goal.
+                </h6>
+                <img
+                  class="client__icn"
+                  src="./assets/images/feedback_3.png"
+                  alt="photo Regina"
+                />
+                <div class="client__info">
+                  <a class="client__link" href="#" target="_blank"
+                    >Regina Miles</a
+                  >
+                  <p class="client__position">Designer</p>
+                </div>
+              </div>
+
+              <div class="feedbacks__item">
+                <div class="feedback__stars">
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/empty-star.png"
+                    alt="empty star"
+                  />
+                </div>
+                <h6 class="client__heading">
+                  Slate helps you see how many more days you need to work to
+                  reach your financial goal.
+                </h6>
+                <img
+                  class="client__icn"
+                  src="./assets/images/feedback_3.png"
+                  alt="photo Regina"
+                />
+                <div class="client__info">
+                  <a class="client__link" href="#" target="_blank"
+                    >Regina Miles</a
+                  >
+                  <p class="client__position">Designer</p>
+                </div>
+              </div>
+
+              <div class="feedbacks__item">
+                <div class="feedback__stars">
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/empty-star.png"
+                    alt="empty star"
+                  />
+                </div>
+                <h6 class="client__heading">
+                  Slate helps you see how many more days you need to work to
+                  reach your financial goal.
+                </h6>
+                <img
+                  class="client__icn"
+                  src="./assets/images/feedback_2.png"
+                  alt="photo Regina"
+                />
+                <div class="client__info">
+                  <a class="client__link" href="#" target="_blank"
+                    >Regina Miles</a
+                  >
+                  <p class="client__position">Designer</p>
+                </div>
+              </div>
+
+              <div class="feedbacks__item">
+                <div class="feedback__stars">
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/star.png"
+                    alt="star"
+                  />
+                  <img
+                    class="feedback__star"
+                    src="./assets/images/icons/empty-star.png"
+                    alt="empty star"
+                  />
+                </div>
+                <h6 class="client__heading">
+                  Slate helps you see how many more days you need to work to
+                  reach your financial goal.
+                </h6>
+                <img
+                  class="client__icn"
+                  src="./assets/images/feedback_2.png"
+                  alt="photo Regina"
+                />
+                <div class="client__info">
+                  <a class="client__link" href="#" target="_blank"
+                    >Regina Miles</a
+                  >
+                  <p class="client__position">Designer</p>
+                </div>
               </div>
             </div>
           </div>
@@ -342,129 +493,175 @@
             Problems trying to resolve the conflict between<br />
             the two major realms of Classical physics: Newtonian mechanics
           </p>
-          <div class="team__members">
-            <div class="members__item">
-              <img
-                class="team__photo"
-                src="./assets/images/team_Ashley.png"
-                alt="photo Ashley"
-              />
-              <div class="members__info">
-                <h5 class="members__name">Ashley Fletcher</h5>
-                <h6 class="members__position">CEO</h6>
-                <ul class="members__socials">
-                  <li>
-                    <a href="#" class="socials__link">
-                      <img
-                        class="link__img"
-                        src="./assets/images/icons/facebook.png"
-                        alt="facebook"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="socials__link">
-                      <img
-                        class="link__img"
-                        src="./assets/images/icons/inst.png"
-                        alt="inst"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="socials__link">
-                      <img
-                        class="link__img"
-                        src="./assets/images/icons/twitter.png"
-                        alt="twitter"
-                      />
-                    </a>
-                  </li>
-                </ul>
+          <div class="team__members swiper-container">
+            <div class="swiper-wrapper">
+              <div class="members__item swiper-slide">
+                <img
+                  class="team__photo"
+                  src="./assets/images/team_Ashley.png"
+                  alt="photo Ashley"
+                />
+                <div class="members__info">
+                  <h5 class="members__name">Ashley Fletcher</h5>
+                  <h6 class="members__position">CEO</h6>
+                  <ul class="members__socials">
+                    <li>
+                      <a href="#" class="socials__link">
+                        <img
+                          class="link__img"
+                          src="./assets/images/icons/facebook.png"
+                          alt="facebook"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="socials__link">
+                        <img
+                          class="link__img"
+                          src="./assets/images/icons/inst.png"
+                          alt="inst"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="socials__link">
+                        <img
+                          class="link__img"
+                          src="./assets/images/icons/twitter.png"
+                          alt="twitter"
+                        />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
-            <div class="members__item">
-              <img
-                class="team__photo"
-                src="./assets/images/team_Rodney.png"
-                alt="photo Rodney"
-              />
-              <div class="members__info">
-                <h5 class="members__name">Rodney Stratton</h5>
-                <h6 class="members__position">Consultant</h6>
-                <ul class="members__socials">
-                  <li>
-                    <a href="#" class="socials__link">
-                      <img
-                        class="link__img"
-                        src="./assets/images/icons/facebook.png"
-                        alt="facebook"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="socials__link">
-                      <img
-                        class="link__img"
-                        src="./assets/images/icons/inst.png"
-                        alt="inst"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="socials__link">
-                      <img
-                        class="link__img"
-                        src="./assets/images/icons/twitter.png"
-                        alt="twitter"
-                      />
-                    </a>
-                  </li>
-                </ul>
+              <div class="members__item swiper-slide">
+                <img
+                  class="team__photo"
+                  src="./assets/images/team_Rodney.png"
+                  alt="photo Rodney"
+                />
+                <div class="members__info">
+                  <h5 class="members__name">Rodney Stratton</h5>
+                  <h6 class="members__position">Consultant</h6>
+                  <ul class="members__socials">
+                    <li>
+                      <a href="#" class="socials__link">
+                        <img
+                          class="link__img"
+                          src="./assets/images/icons/facebook.png"
+                          alt="facebook"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="socials__link">
+                        <img
+                          class="link__img"
+                          src="./assets/images/icons/inst.png"
+                          alt="inst"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="socials__link">
+                        <img
+                          class="link__img"
+                          src="./assets/images/icons/twitter.png"
+                          alt="twitter"
+                        />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
-            </div>
 
-            <div class="members__item">
-              <img
-                class="team__photo"
-                src="./assets/images/team_Avie.png"
-                alt="photo Avie"
-              />
-              <div class="members__info">
-                <h5 class="members__name">Avie Beaton</h5>
-                <h6 class="members__position">CO Founder</h6>
-                <ul class="members__socials">
-                  <li>
-                    <a href="#" class="socials__link">
-                      <img
-                        class="link__img"
-                        src="./assets/images/icons/facebook.png"
-                        alt="facebook"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="socials__link">
-                      <img
-                        class="link__img"
-                        src="./assets/images/icons/inst.png"
-                        alt="inst"
-                      />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="socials__link">
-                      <img
-                        class="link__img"
-                        src="./assets/images/icons/twitter.png"
-                        alt="twitter"
-                      />
-                    </a>
-                  </li>
-                </ul>
+              <div class="members__item swiper-slide">
+                <img
+                  class="team__photo"
+                  src="./assets/images/team_Avie.png"
+                  alt="photo Avie"
+                />
+                <div class="members__info">
+                  <h5 class="members__name">Avie Beaton</h5>
+                  <h6 class="members__position">CO Founder</h6>
+                  <ul class="members__socials">
+                    <li>
+                      <a href="#" class="socials__link">
+                        <img
+                          class="link__img"
+                          src="./assets/images/icons/facebook.png"
+                          alt="facebook"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="socials__link">
+                        <img
+                          class="link__img"
+                          src="./assets/images/icons/inst.png"
+                          alt="inst"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="socials__link">
+                        <img
+                          class="link__img"
+                          src="./assets/images/icons/twitter.png"
+                          alt="twitter"
+                        />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="members__item swiper-slide">
+                <img
+                  class="team__photo"
+                  src="./assets/images/team_Avie.png"
+                  alt="photo Avie"
+                />
+                <div class="members__info">
+                  <h5 class="members__name">Avie Beaton</h5>
+                  <h6 class="members__position">CO Founder</h6>
+                  <ul class="members__socials">
+                    <li>
+                      <a href="#" class="socials__link">
+                        <img
+                          class="link__img"
+                          src="./assets/images/icons/facebook.png"
+                          alt="facebook"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="socials__link">
+                        <img
+                          class="link__img"
+                          src="./assets/images/icons/inst.png"
+                          alt="inst"
+                        />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="socials__link">
+                        <img
+                          class="link__img"
+                          src="./assets/images/icons/twitter.png"
+                          alt="twitter"
+                        />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
         </div>
       </section>
@@ -492,13 +689,20 @@
               />
               <p class="form__result" id="name_result"></p>
               <p class="form__result" id="email_result"></p>
-              <select class="form__element element--select" id="date" name="date">
+              <select
+                class="form__element element--select"
+                id="date"
+                name="date"
+              >
                 <option value="" disabled selected>Please Select</option>
                 <option value="option1">option1</option>
                 <option value="option2">option2</option>
               </select>
-              <select class="form__element element--select"
-              id="time" name="time">
+              <select
+                class="form__element element--select"
+                id="time"
+                name="time"
+              >
                 <option value="" disabled selected>4:00 Available</option>
                 <option value="option1">option1</option>
                 <option value="option2">option2</option>
@@ -507,7 +711,7 @@
               <p class="form__result" id="time_result"></p>
               <textarea
                 class="form__element element--message"
-                id="message" 
+                id="message"
                 name="message"
                 placeholder="Message"
                 rows="6"
@@ -635,11 +839,13 @@
         <div class="footer__bottom">
           <div class="bottom__content">
             <p class="bottom__text">
-            Made With Love By Figmaland All Right Reserved
-          </p>
+              Made With Love By Figmaland All Right Reserved
+            </p>
           </div>
         </div>
       </div>
     </footer>
+    <script type="module" src="./assets/scripts/carousel.js"></script>
+    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
   </body>
 </html>
