@@ -12,6 +12,7 @@
       rel="stylesheet"
     />
     <script src="./assets/scripts/index.js"></script>
+    <link rel="stylesheet" href="./node_modules/swiper/swiper-bundle.min.css" />
   </head>
   <body>
     <header class="header">
@@ -72,8 +73,11 @@
 
     <main class="main">
       <section class="hero">
-        <div class="container">
+        <div class="hero__background">
+          <div class="hero__image"></div>
           <div class="hero__overlay"></div>
+        </div>
+        <div class="container">
           <div class="hero__container">
             <h1 class="hero__heading">We Take Care of the Future</h1>
             <h4 class="hero__subheading">
@@ -842,5 +846,6 @@
       </div>
     </footer>
     <script type="module" src="./assets/scripts/carousel.js"></script>
+    <script src="./node_modules/swiper/swiper-bundle.min.js"></script>
   </body>
 </html>

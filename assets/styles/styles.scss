@@ -191,33 +191,44 @@ body {
 
   .hero {
     position: relative;
-    background-image: url("../images/header_1.png");
-    background-size: cover;
-    background-position: center;
     width: 100vw;
     display: flex;
     justify-content: center;
-    z-index: -1;
 
-    @media (min-width: 769px) {
-      margin-top: -10.4rem;
+    .hero__background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      @media (min-width: 769px) {
+        margin-top: -10.4rem;
+      }
+
+      .hero__image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-image: url("../images/header_1.png");
+      }
+
+      .hero__overlay {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
     }
 
     .container {
       display: flex;
       justify-content: center;
 
-      .hero__overlay {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-
       .hero__container {
-        z-index: 2;
         max-width: 57.3rem;
-        padding: 215px 0 135px;
+        padding: 115px 0 235px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -266,7 +277,7 @@ body {
   }
 
   .feature {
-    padding: 16rem 0 10rem;
+    padding: 10rem 0;
 
     .container {
       .subheading {
@@ -412,10 +423,10 @@ body {
 
     .feedbacks {
       display: flex;
-      gap: 30px;
+      //gap: 30px;
 
       &__item {
-        flex: 0 0 calc(34.5% - 3.3rem);
+        flex: 0 0 auto; //calc(34.5% - 3.3rem);
         background-color: $color-base;
         padding: 30px 35px;
         display: grid;
@@ -432,7 +443,7 @@ body {
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
-          flex: 0 0 50%;
+          flex: 0 0 47%;
         }
 
         .feedback__stars {
@@ -487,7 +498,7 @@ body {
       position: relative;
 
       .swiper-wrapper {
-        gap: 3.3rem;
+        //gap: 3.3rem;
 
         .members__item {
           display: flex;
