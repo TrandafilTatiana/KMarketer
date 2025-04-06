@@ -1,5 +1,5 @@
-@import "variables";
-@import "button";
+@use "variables" as *;
+@use "button" as *;
 
 html {
   font-size: $font-size-base;
@@ -426,7 +426,7 @@ body {
       //gap: 30px;
 
       &__item {
-        flex: 0 0 auto; //calc(34.5% - 3.3rem);
+        flex: 0 0 auto;
         background-color: $color-base;
         padding: 30px 35px;
         display: grid;
@@ -788,10 +788,9 @@ body {
       gap: 0;
 
       @media (min-width: 769px) and (max-width: 1024) {
-        dgrid-column: span 2;
+        grid-column: span 2;
       }
 
-      grid-column: span 2;
 
       .title--btn {
         padding-bottom: 2rem;

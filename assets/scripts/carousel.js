@@ -1,6 +1,3 @@
-//import Swiper from "swiper";
-//import "swiper/swiper-bundle.min.css";
-
 document.addEventListener("DOMContentLoaded", function () {
   //carousel
 
@@ -106,6 +103,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   console.log("Swiper initialized.");
-  //var swiperWrapper = document.querySelector(".swiper-wrapper");
-  //swiperWrapper.style.gap = "0";
 });
