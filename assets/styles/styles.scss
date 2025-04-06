@@ -1,5 +1,5 @@
-@import "variables";
-@import "button";
+@use "variables" as *;
+@use "button" as *;
 
 html {
   font-size: $font-size-base;
@@ -15,6 +15,17 @@ body {
 .container {
   max-width: 105rem;
   width: 100%;
+
+  @media (max-width: 768px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 33.4rem;
+  }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    max-width: 72rem;
+  }
 }
 
 .subheading {
@@ -69,32 +80,77 @@ body {
   width: 100%;
 
   .container {
-    padding: 3.35rem 0;
-    @include container-flex(center, center, 3.9rem);
+    padding-top: 3.35rem;
+    padding-bottom: 3.35rem;
 
-    .logo {
-      margin-right: auto;
-      text-decoration: none;
-      color: $color-base;
+    @media (max-width: 768px) {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
     }
 
-    .header__nav .nav__list {
-      display: flex;
-      list-style: none;
-      gap: 2.1rem;
+    .header-content {
+      display: grid;
+      grid-template-columns: auto 1fr repeat(2, auto);
+      grid-template-rows: auto;
+      grid-template-areas: "logo nav actions hamburger";
+      align-items: center;
+      justify-content: center;
 
-      .nav__link {
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr repeat(2, auto);
+        grid-template-areas:
+          "logo actions hamburger"
+          "nav nav nav";
+      }
+
+      .logo {
+        margin-right: auto;
         text-decoration: none;
         color: $color-base;
+        grid-area: logo;
+      }
+      .header__nav {
+        grid-area: nav;
 
-        &:hover {
-          text-decoration: underline;
+        @media (min-width: 769px) {
+          margin-right: 3.9rem;
+        }
+        @media (max-width: 768px) {
+          display: none;
+          margin-top: 2rem;
+        }
+
+        &--open {
+          display: block;
+        }
+      }
+      .header__nav .nav__list {
+        display: flex;
+        justify-content: end;
+        list-style: none;
+        gap: 2.1rem;
+        padding: 0;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav__link {
+          text-decoration: none;
+          color: $color-base;
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
 
     .header__actions {
       @include container-flex(center, start, 1.8rem);
+      grid-area: actions;
+      margin-right: 2rem;
 
       .action__btn {
         all: unset;
@@ -102,8 +158,26 @@ body {
         width: 1.6rem;
         height: 1.6rem;
       }
-      .btn--menu {
-        display: none;
+    }
+
+    .header__hamburger {
+      display: none;
+      grid-area: hamburger;
+
+      @media (max-width: 768px) {
+        all: unset;
+        display: block;
+        cursor: pointer;
+        width: 1.6rem;
+        height: 1.6rem;
+
+        .btn--close {
+          display: none;
+          width: 2rem;
+        }
+        .btn--menu {
+          display: block;
+        }
       }
     }
   }
@@ -117,39 +191,61 @@ body {
 
   .hero {
     position: relative;
-    background-image: url("../images/header_1.png");
-    background-size: cover;
-    background-position: center;
     width: 100vw;
     display: flex;
     justify-content: center;
-    margin-top: -10.4rem;
-    z-index: -1;
+
+    .hero__background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+
+      @media (min-width: 769px) {
+        margin-top: -10.4rem;
+      }
+
+      .hero__image {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-image: url("../images/header_1.png");
+      }
+
+      .hero__overlay {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
 
     .container {
       display: flex;
       justify-content: center;
 
-      .hero__overlay {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-      }
-
       .hero__container {
-        z-index: 2;
         max-width: 57.3rem;
-        padding: 215px 0 135px;
+        padding: 115px 0 235px;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 4.6rem;
 
+        @media (max-width: 768px) {
+          max-width: 28.8rem;
+        }
+
         .hero__heading {
           font-size: 5.8rem;
           font-weight: 800;
           margin: 0;
+
+          @media (max-width: 768px) {
+            font-size: 4rem;
+          }
         }
 
         .hero__subheading {
@@ -160,6 +256,10 @@ body {
 
         .hero__actions {
           @include container-flex(center, center, 1rem);
+
+          @media (max-width: 768px) {
+            flex-direction: column;
+          }
 
           .hero__btn {
             @include btn-style;
@@ -177,7 +277,7 @@ body {
   }
 
   .feature {
-    padding: 16rem 0 10rem;
+    padding: 10rem 0;
 
     .container {
       .subheading {
@@ -188,6 +288,17 @@ body {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 3rem;
+
+        @media (max-width: 768px) {
+          display: flex;
+          flex-direction: column;
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
 
         &__item {
           max-width: 32.8rem;
@@ -224,7 +335,7 @@ body {
         margin: 16px 0 50px;
       }
 
-      &__video {
+      .service__video {
         position: relative;
         width: 100%;
 
@@ -250,43 +361,58 @@ body {
             margin-left: 2rem;
           }
         }
+
+        .service__img {
+          width: 100%;
+          height: 44rem;
+          object-fit: cover;
+        }
       }
     }
   }
 
   .feedback {
     padding: 85px 0;
+    position: relative;
 
     .subheading {
       margin: 17px 0 75px;
     }
 
     .feedbacks-container {
-      position: relative;
       overflow: hidden;
+      max-width: 900px;
+
+      @media (min-width: 769px) and (max-width: 1024px) {
+        max-width: 620px;
+      }
 
       .prev,
       .next {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
         border: none;
-        padding: 1rem 1.5rem;
-        font-size: 2rem;
+        transform: translateY(400%);
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
         cursor: pointer;
         z-index: 1;
         border-radius: 5px;
         transition: background-color 0.3s ease;
+
+        @media (max-width: 768px) {
+          transform: translateY(550%);
+        }
       }
 
       .prev {
-        left: 10px;
+        left: -35px;
       }
 
       .next {
-        right: 10px;
+        right: -35px;
       }
 
       .prev:hover,
@@ -297,10 +423,10 @@ body {
 
     .feedbacks {
       display: flex;
-      gap: 30px;
+      //gap: 30px;
 
       &__item {
-        flex: 0 0 calc(34.5% - 3.3rem); 
+        flex: 0 0 auto;
         background-color: $color-base;
         padding: 30px 35px;
         display: grid;
@@ -311,6 +437,14 @@ body {
         border-radius: 5px;
         border: 1px solid #dedede;
         box-sizing: border-box;
+
+        @media (max-width: 768px) {
+          flex: 0 0 100%;
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+          flex: 0 0 47%;
+        }
 
         .feedback__stars {
           grid-column: span 2;
@@ -352,7 +486,8 @@ body {
   }
 
   .team {
-    padding: 80px 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
 
     .subheading {
       margin: 24.5px 0 80px;
@@ -363,12 +498,20 @@ body {
       position: relative;
 
       .swiper-wrapper {
-        gap: 3.3rem;
+        //gap: 3.3rem;
 
         .members__item {
           display: flex;
           flex: 0 0 calc(33% - 3.3rem);
           flex-direction: column;
+
+          @media (max-width: 768px) {
+            flex: 0 0 100%;
+          }
+
+          @media (min-width: 769px) and (max-width: 1024) {
+            flex: 0 0 48%;
+          }
 
           .members__info {
             background-color: $color-base;
@@ -435,6 +578,11 @@ body {
           grid-template-columns: repeat(2, 1fr);
           grid-gap: 20px;
 
+          @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+          }
+
           .form__element {
             color: $light-gray-color;
             border: 1px solid #f9f9f9;
@@ -465,6 +613,10 @@ body {
           border-radius: 5px;
           border: 1px solid $primary-color;
           cursor: pointer;
+
+          @media (max-width: 768px) {
+            padding: 20px 103px;
+          }
         }
       }
     }
@@ -480,10 +632,21 @@ body {
         display: flex;
         justify-content: space-between;
 
+        @media (max-width: 768px) {
+          flex-direction: column;
+          align-items: center;
+          gap: 50px;
+        }
+
         .bottom__left {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
+
+          @media (max-width: 768px) {
+            align-items: center;
+            max-width: 239px;
+          }
 
           .bottom__heading {
             color: $background-color;
@@ -503,6 +666,11 @@ body {
           border-radius: 5px;
           border: 1px solid $primary-color;
           cursor: pointer;
+
+          @media (max-width: 768px) {
+            padding: 20px 105px;
+            margin: 0;
+          }
         }
       }
     }
@@ -554,6 +722,16 @@ body {
     width: 100%;
     padding: 7rem 0;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    @media (min-width: 769px) and (max-width: 1024) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+    }
+
     .main__item {
       @extend .container;
       align-items: flex-start;
@@ -592,6 +770,10 @@ body {
           border-radius: 5px;
           color: $color-base;
           border: 1px;
+
+          @media (max-width: 768px) {
+            padding: 2rem 3rem;
+          }
         }
 
         .footer--button {
@@ -604,6 +786,11 @@ body {
 
     .item--container {
       gap: 0;
+
+      @media (min-width: 769px) and (max-width: 1024) {
+        grid-column: span 2;
+      }
+
 
       .title--btn {
         padding-bottom: 2rem;
@@ -627,7 +814,11 @@ body {
 
     .bottom__content {
       max-width: 105rem;
-      width: 100%;
+
+      @media (max-width: 768px) {
+        max-width: 221px;
+        text-align: center;
+      }
     }
   }
 }
